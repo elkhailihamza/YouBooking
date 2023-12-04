@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=DM+Sans:opsz,wght@9..40,200;9..40,400&family=Doppio+One&family=Inter:wght@300;700&family=Style+Script&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown__menu:hover {
+    -webkit-box-shadow: 0px 102px 165px -99px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 102px 165px -99px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 102px 165px -99px rgba(0, 0, 0, 0.75);
+    transition: 0.5s ease-in-out;
+}
+
+.dropdown__list {
+    -webkit-box-shadow: 0px 0px 100px -50px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 100px -50px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 100px -50px rgba(0, 0, 0, 0.75);
+}
+
+.navbar__link :hover {
+    fill: #F77F00;
+}
