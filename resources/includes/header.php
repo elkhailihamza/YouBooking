@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar border-bottom">
-        <div class="container-fluid col-11">
+        <div class="container-fluid py-1 px-3">
             <a class="navbar-brand" style="color: #000000; font-size: 1.8em;" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 24 24" fill="#D62828"
                     stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -19,6 +19,18 @@
                 </svg>
                 You<span style="color: #F77F00; font-family: 'Allerta Stencil';">Booking</span>
             </a>
+            <div class="form-group col-5">
+                <form action="" class="d-flex gap-2">
+                    <input type="search" placeholder="Find something.." maxlength="61" class="form-control w-100">
+                    <button type="submit" class="btn border-0 px-3" style="background: #FFBA08;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
             <div class="d-flex gap-5">
                 <div class="d-flex">
                     <ul class="navbar-nav flex-row gap-3 pe-3">
