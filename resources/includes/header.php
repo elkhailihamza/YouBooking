@@ -22,7 +22,7 @@
             <div class="form-group col-5">
                 <form action="" class="d-flex gap-2">
                     <input type="search" placeholder="Find something.." maxlength="61" class="form-control w-100">
-                    <button type="submit" class="btn border-0 px-3" style="background: #FFBA08;">
+                    <button type="submit" class="btn border-0 px-3" style="background: #FCBF49;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -87,7 +87,7 @@
                                 <circle cx="12" cy="7" r="4"></circle>
                             </svg></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end mt-3 border-0 p-2 dropdown__list">
+                    <ul class="dropdown-menu dropdown-menu-end me-5 border-0 dropdown__list">
                         <li><a class="dropdown-item disabled" href="#">Dropdown Menu</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -97,7 +97,9 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+                        <li><a class="dropdown-item" href="#">Gift Cards</a></li>
                         <li><a class="dropdown-item" href="#">Book your hotel</a></li>
+                        <li><a class="dropdown-item" href="#">Help Center</a></li>
                     </ul>
                 </div>
             </div>
