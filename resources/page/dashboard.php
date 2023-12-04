@@ -2,12 +2,13 @@
 include("../includes/board_header.php");
 ?>
 <section class="container-fluid p-0">
-    <div class="container rounded-pill py-4 welcome-wrap mt-5 col-11">
+    <div class="container rounded-pill py-4 mt-5 col-11">
         <div class="container col-10">
-            <h2>Welcome, !</h2>
+            <h2>Welcome, mdo!</h2>
+            <hr class="col-3">
         </div>
     </div>
-    <div class="d-flex flex-column align-items-center container-fluid mt-5">
+    <div class="d-flex flex-column align-items-center container-fluid">
         <div class="container-fluid col-2 pb-3">
             <h2>Sales graph</h2>
         </div>
