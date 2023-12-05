@@ -12,7 +12,8 @@
 <body>
     <nav class="navbar border-bottom">
         <div class="container-fluid py-1 px-3 col-11">
-            <a class="navbar-brand d-flex align-items-center" style="color: #000000; font-size: 1.8em; user-select: none;" href="#">
+            <a class="navbar-brand d-flex align-items-center"
+                style="color: #000000; font-size: 1.8em; user-select: none;" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 24 24" fill="#D62828"
                     stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -78,21 +79,17 @@
                     </ul>
                 </div>
                 <div class="dropdown d-flex align-items-center dropdown__menu">
-                    <button class="bg-white rounded-pill px-4 py-2" type="button"
-                        data-bs-toggle="dropdown" data-toggle="dropdown" aria-expanded="false">
+                    <button class="bg-white d-flex align-items-center rounded-pill px-4 py-2" type="button" data-bs-toggle="dropdown"
+                        data-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>n
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
-                        <span class="rounded-pill p-1" style="background-color: #EAE2B7;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-user">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg></span>
+                        <a href="#" class="d-flex align-items-center text-decoration-none">
+                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle">
+                        </a>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end me-5 border-0 dropdown__list">
                         <li><a class="dropdown-item disabled" href="#">Dropdown Menu</a></li>

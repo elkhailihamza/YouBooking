@@ -1,4 +1,5 @@
 <?php
+$identifier='is_home';
 include("../includes/board_header.php");
 ?>
 <section class="container-fluid p-0">
