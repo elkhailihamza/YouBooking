@@ -67,7 +67,7 @@
             <div class="dropdown d-flex align-items-center dropdown__menu">
                 <button class="bg-white d-flex align-items-center gap-2 rounded-pill px-4 py-2" type="button"
                     data-bs-toggle="dropdown" data-toggle="dropdown" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="h   ttp://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>n

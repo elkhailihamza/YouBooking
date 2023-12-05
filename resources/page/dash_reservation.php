@@ -1,7 +1,8 @@
 <?php
 $identifier = 'is_reservation';
-include("../includes/board_header.php");
 require("../config/db_connection.php");
+require("../includes/CRUD/functions.php");
+include("../includes/board_header.php");
 ?>
 
 <section class="container-fluid d-flex flex-column align-items-center gap-3 w-100 h-100">
@@ -28,30 +29,18 @@ require("../config/db_connection.php");
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">id_utilisateur</th>
+                        <th scope="col">username</th>
+                        <th scope="col">id_reservation</th>
+                        <th scope="col">date_debut</th>
+                        <th scope="col">date_fin</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <?php
+                        include("../includes/CRUD/functions.php");
+                        select();
+                    ?>
                 </tbody>
             </table>
         </div>
