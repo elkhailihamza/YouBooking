@@ -107,7 +107,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" style="background: #003049;" aria-current="page">
+                <a href="../page/dash_home.php" class="nav-link <?php if($identifier=='is_home')echo 'active'; ?>" aria-current="page">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#home"></use>
                     </svg>
@@ -115,35 +115,19 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link link-dark">
+                <a href="../page/dash_reservation.php" class="nav-link <?php if($identifier=='is_reservation')echo 'active'; ?>">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#speedometer2"></use>
                     </svg>
-                    Dashboard
+                    Reservations
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link link-dark">
+                <a href="#" class="nav-link <?php if($identifier=='is_feedback')echo 'active'; ?>">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#table"></use>
                     </svg>
-                    Orders
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#grid"></use>
-                    </svg>
-                    Products
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#people-circle"></use>
-                    </svg>
-                    Customers
+                    Feedback
                 </a>
             </li>
         </ul>
