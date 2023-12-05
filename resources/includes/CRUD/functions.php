@@ -1,9 +1,17 @@
 <?php
 
 function insert() {
-    require("insert.php");
+    include("insert.php");
 }
 
 function select() {
-    require("select.php");
+    include("select.php");
+}
+
+function update() {
+    include("update.php");
+}
+
+function delete() {
+    include("delete.php");
 }
