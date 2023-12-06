@@ -4,7 +4,7 @@ function insert() {
     include("insert.php");
 }
 
-function select() {
+function select($identifier) {
     include("select.php");
 }
 
