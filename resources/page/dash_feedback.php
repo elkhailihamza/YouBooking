@@ -1,5 +1,5 @@
 <?php
-$identifier = 'is_reservation';
+$identifier = 'is_feedback';
 require("../config/db_connection.php");
 require("../includes/CRUD/functions.php");
 include("../includes/board_header.php");
@@ -8,7 +8,7 @@ include("../includes/board_header.php");
 <section class="container-fluid d-flex flex-column justify-content-center align-items-center gap-3 w-100 h-75">
     <div class="mt-5">
         <h2>
-            Current reservations
+            Feedback
         </h2>
         <hr>
     </div>
@@ -19,11 +19,10 @@ include("../includes/board_header.php");
                     <tr class="position-sticky" style="top: 0px;">
                         <th scope="col">#</th>
                         <th scope="col">username</th>
-                        <th scope="col">id_reservation</th>
-                        <th scope="col">id_room</th>
-                        <th scope="col">date_debut</th>
-                        <th scope="col">date_fin</th>
-                        <th scope="col">hotel</th>
+                        <th scope="col">email</th>
+                        <th scope="col">description</th>
+                        <th scope="col">user_id</th>
+                        <th scope="col">id_role</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -39,3 +38,4 @@ include("../includes/board_header.php");
 </section>
 
 <?php include("../includes/footer.php"); ?>
+
