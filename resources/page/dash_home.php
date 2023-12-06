@@ -25,7 +25,8 @@ include("../includes/board_header.php");
     </div>
 </section>
 </main>
-</body>
+
+<?php include("../includes/footer.php"); ?>
 
 <script>
     var ctx = document.getElementById('upndownchart').getContext('2d');
@@ -59,5 +60,3 @@ include("../includes/board_header.php");
         }
     });
 </script>
-
-</html>

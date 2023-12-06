@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../includes/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <nav class="navbar border-bottom">
     <div class="container-fluid py-1 px-3 col-11">
@@ -107,7 +106,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="../page/dash_home.php" class="nav-link <?php if($identifier=='is_home')echo 'active'; ?>" aria-current="page">
+                <a href="../page/dash_home.php" class="nav-link <?php echo ($identifier=='is_home') ? "active" : "link-dark"; ?>" aria-current="page">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#home"></use>
                     </svg>
@@ -115,7 +114,7 @@
                 </a>
             </li>
             <li>
-                <a href="../page/dash_reservation.php" class="nav-link <?php if($identifier=='is_reservation')echo 'active'; ?>">
+                <a href="../page/dash_reservation.php" class="nav-link <?php echo ($identifier=='is_reservation') ? "active" : "link-dark";; ?>">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#speedometer2"></use>
                     </svg>
@@ -123,7 +122,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link <?php if($identifier=='is_feedback')echo 'active'; ?>">
+                <a href="../page/dash_feedback.php" class="nav-link <?php echo ($identifier=='is_feedback') ? "active" : "link-dark"; ?>">
                     <svg class="bi me-2" width="16" height="16">
                         <use xlink:href="#table"></use>
                     </svg>
@@ -132,6 +131,3 @@
             </li>
         </ul>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>

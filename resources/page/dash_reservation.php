@@ -30,13 +30,12 @@ include("../includes/board_header.php");
                 <tbody>
                     <?php
                         include_once("../includes/CRUD/functions.php");
-                        select();
+                        select($identifier);
                     ?>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
-</body>
 
-</html>
+<?php include("../includes/footer.php"); ?>
