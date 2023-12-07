@@ -1,8 +1,7 @@
 <?php
 $identifier='is_home';
-session_start();
-$username = $_SESSION['username'];
 include("../includes/board_header.php");
+$username = $_SESSION['username'];
 ?>
 <section class="container-fluid p-0">
     <div class="container rounded-pill py-4 mt-5 col-11">
