@@ -1,7 +1,7 @@
 <?php
 $identifier = 'is_feedback';
 require("../config/db_connection.php");
-require("../includes/CRUD/functions.php");
+require("../includes/functions.php");
 include("../includes/board_header.php");
 ?>
 
@@ -28,7 +28,7 @@ include("../includes/board_header.php");
                 </thead>
                 <tbody>
                     <?php
-                        include_once("../includes/CRUD/functions.php");
+                        include_once("../includes/functions.php");
                         select($identifier);
                     ?>
                 </tbody>

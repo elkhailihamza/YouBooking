@@ -1,5 +1,5 @@
 <?php
-require '../page/vendor/autoload.php';
+require_once("../page/vendor/autoload.php");
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../page');
 $dotenv->load();
 $serverName = $_ENV["DB_HOST"];
