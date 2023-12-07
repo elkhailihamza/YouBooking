@@ -1,12 +1,13 @@
 <?php
 $identifier='is_home';
 include("../includes/board_header.php");
+$username = $_SESSION['username'];
 ?>
 <section class="container-fluid p-0">
     <div class="container rounded-pill py-4 mt-5 col-11">
         <div class="container col-10">
-            <h2>Welcome, mdo!</h2>
-            <hr class="col-3">
+            <h2>Welcome, <?= $username ?></h2>
+            <hr>
         </div>
     </div>
     <div class="d-flex flex-column align-items-center container-fluid">
