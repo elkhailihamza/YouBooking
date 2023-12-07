@@ -1,6 +1,7 @@
 <?php
 include '../config/db_connection.php';
 include '../includes/reg_header.php';
+session_start();
 
 if (isset($_POST['submit'])) {
     $email = stripcslashes(strtolower($_POST['email']));
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    $stmt = mysqli_prepare($conn, "SELECT id_utilisateur, id_role, password FROM utilisateur WHERE email = ? ");
+    $stmt = mysqli_prepare($conn, "SELECT id_utilisateur, id_role, username, password FROM utilisateur WHERE email = ? ");
     mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
@@ -28,6 +29,7 @@ if (isset($_POST['submit'])) {
         if (password_verify($pass, $row['password'])) {
             $_SESSION["id"] = $row['id_utilisateur'];
             $_SESSION["id_role"] = $row['id_role'];
+            $_SESSION["username"] = $row['username'];
             if ($_SESSION["id_role"] === 1) {
                 header("Location: cli.php");
                 exit();
