@@ -12,7 +12,7 @@ if (isset($_POST['updatebtn'])) {
 
     $result = mysqli_query($conn, $requetUpdate);
     if ($result) {
-        header("Location: ../room.php");
+        header("Location:../room.php");
         exit();
     } else {
         echo "error update : " . mysqli_error($conn);
