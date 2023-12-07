@@ -1,21 +1,22 @@
 <?php
-include '../connect.php';
+include('../connect.php');
 
-if(isset($_POST['updatebtn'])){
+if (isset($_POST['updatebtn'])) {
     $id_room = $_POST['id_room'];
     $number = $_POST['number'];
     $prix = $_POST['prix'];
     $status = $_POST['status'];
-    $id_hotel = $_POST['hotel'];
+    $hotel_id = $_POST['hotel']; 
 
-    $updateRoom = "UPDATE room SET number = ?, prix = ?, status = ?, id_hotel = ? WHERE id_room = ?";
-    $stmt = mysqli_prepare($conn, $updateRoom);
-    mysqli_stmt_bind_param($stmt, 'ssssi', $number, $prix, $status, $id_hotel, $id_room);
+    $requetUpdate = "UPDATE room SET id_room = '$number', prix = '$prix', status = '$status', id_hotel = '$hotel_id' WHERE id_room = '$id_room'";
 
-    if(mysqli_stmt_execute($stmt)){
+    $result = mysqli_query($conn, $requetUpdate);
+    if ($result) {
         header("Location: ../room.php");
+        exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "error update : " . mysqli_error($conn);
     }
 }
+
 ?>
