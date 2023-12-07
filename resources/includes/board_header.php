@@ -127,8 +127,7 @@ session_start();
             if (isset($_SESSION["id_role"]) && $_SESSION["id_role"] == 4) {
                 ?>
                 <li>
-                    <a href="../page/dash_admin.php" class="nav-link <?php echo ($identifier == 'is_admin') ? "active" : "link-dark";
-                    ; ?>">
+                    <a href="../page/dash_admin.php" class="nav-link <?php echo ($identifier == 'is_admin') ? "active" : "link-dark"; ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="<?php echo ($identifier == 'is_admin') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -136,6 +135,39 @@ session_start();
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
                         admin
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_responsables.php"
+                        class="nav-link <?php echo ($identifier == 'is_responsables') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Responsables
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_Proprietairs.php"
+                        class="nav-link <?php echo ($identifier == 'is_Proprietairs') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Proprietairs
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_clients.php"
+                        class="nav-link <?php echo ($identifier == 'is_clients') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Clients
                     </a>
                 </li>
                 <li>

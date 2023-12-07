@@ -1,5 +1,5 @@
 <?php
-$identifier = "is_admin";
+$identifier = "is_clients";
 include '../includes/board_header.php';
 include("../config/db_connection.php");
 ?>
@@ -24,7 +24,7 @@ include("../config/db_connection.php");
         </thead>
         <tbody>
           <?php
-          $result = mysqli_query($conn, "SELECT * FROM utilisateur WHERE id_utilisateur=4");
+          $result = mysqli_query($conn, "SELECT * FROM utilisateur WHERE id_utilisateur=1");
 
           if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
