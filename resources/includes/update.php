@@ -1,3 +1,53 @@
+<?php
+include(__DIR__ . "/../config/db_connection.php");
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $select = "SELECT * FROM utilisateur WHERE id_utilisateur  = ?";
+    $stmt = mysqli_prepare($conn, $select);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+        } else {
+            echo "Erreur dans la requete: " . mysqli_error($conn);
+            exit();
+        }
+    } else {
+        echo "Erreur dans la préparation de la requête: " . mysqli_error($conn);
+        exit();
+    }
+} else {
+    header("Location: erreur.php");
+    exit();
+}
+
+
+if (isset($_POST['update'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $id_role = $_POST['id_role'];
+
+    $update = "UPDATE utilisateur SET username=?, email=?, id_role=? WHERE id_utilisateur=?";
+    $stmt = mysqli_prepare($conn, $update);
+    mysqli_stmt_bind_param($stmt, "ssii", $username, $email, $id_role, $id);
+    $updateResult = mysqli_stmt_execute($stmt);
+
+    if ($updateResult) {
+        header("Location: user.php");
+        exit();
+    } else {
+        echo "Erreur lors de la mise à jour : " . mysqli_error($conn);
+        exit();
+    }
+}
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,20 +68,8 @@
                     stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                 </svg>
-                You<span style="color: #F77F00; font-family: 'Allerta Stencil';">Booking</span>
+                Dash<span style="color: #F77F00; font-family: 'Allerta Stencil';">Board</span>
             </a>
-            <div class="form-group col-5">
-                <form action="" class="d-flex gap-2">
-                    <input type="search" placeholder="Find something.." maxlength="61" class="form-control w-100">
-                    <button type="submit" class="btn border-0 px-3 search-bar__button" style="background: #FCBF49;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </button>
-                </form>
-            </div>
             <div class="d-flex gap-3">
                 <div class="d-flex">
                     <ul class="navbar-nav d-flex justify-content-center align-items-center flex-row gap-3">
@@ -79,10 +117,11 @@
                     </ul>
                 </div>
                 <div class="dropdown d-flex align-items-center dropdown__menu">
-                    <button class="bg-white d-flex align-items-center rounded-pill px-4 py-2" type="button" data-bs-toggle="dropdown"
-                        data-toggle="dropdown" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <button class="bg-white d-flex align-items-center gap-2 rounded-pill px-4 py-2" type="button"
+                        data-bs-toggle="dropdown" data-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="h   ttp://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>n
                             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -91,21 +130,50 @@
                             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle">
                         </a>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end me-5 border-0 dropdown__list">
-                        <li><a class="dropdown-item disabled" href="#">Dropdown Menu</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end text-small shadow dropdown__list"
+                        aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sign up</a></li>
-                        <li><a class="dropdown-item" href="#">Login</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Gift Cards</a></li>
-                        <li><a class="dropdown-item" href="#">Book your hotel</a></li>
-                        <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        <li><a class="dropdown-item" href="../page/sign-out.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+
+    <main class="flex-shrink-0 gap-5" style="height: 76vh;">
+        <section class="container d-flex flex-column h-100 align-items-center justify-content-center">
+            <div>
+                <h2>
+                    Edit contact N°: <?= $id ?>
+                </h2>
+                <hr>
+            </div>
+            <div class="col-5">
+                <form method="post" action="../page/dash_admin.php">
+                    <div class="form-floating">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                            value="<?= $row['username'] ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?= $row['email'] ?>"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_role" class="form-label">id_role</label>
+                        <input type="text" class="form-control" id="id_role" name="id_role"
+                            value="<?= $row['id_role'] ?>" required>
+                    </div>
+                    <button type="submit" name="update" class="btn btn-primary">Edit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <?php include 'footer.php'; ?>
