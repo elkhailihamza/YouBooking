@@ -1,1 +1,1 @@
-# YouBooking
+# hotel-booking

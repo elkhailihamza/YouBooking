@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
 
+<?php
+session_start();
+?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,14 +80,15 @@
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle">
                     </a>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end text-small shadow dropdown__list" aria-labelledby="dropdownUser2">
+                <ul class="dropdown-menu dropdown-menu-end text-small shadow dropdown__list"
+                    aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li><a class="dropdown-item" href="../page/sign-out.php">Sign out</a></li>
                 </ul>
             </div>
         </div>
@@ -106,27 +111,133 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="../page/dash_home.php" class="nav-link <?php echo ($identifier=='is_home') ? "active" : "link-dark"; ?>" aria-current="page">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#home"></use>
+                <a href="../page/dash_home.php"
+                    class="nav-link <?php echo ($identifier == 'is_home') ? "active" : "link-dark"; ?>"
+                    aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="<?php echo ($identifier == 'is_home') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
                     Home
                 </a>
             </li>
+            <?php
+            if (isset($_SESSION["id_role"]) && $_SESSION["id_role"] == 4) {
+                ?>
+                <li>
+                    <a href="../page/dash_admin.php" class="nav-link <?php echo ($identifier == 'is_admin') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_admin') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        admin
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_responsables.php"
+                        class="nav-link <?php echo ($identifier == 'is_responsables') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Responsables
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_Proprietairs.php"
+                        class="nav-link <?php echo ($identifier == 'is_Proprietairs') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Proprietairs
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_clients.php"
+                        class="nav-link <?php echo ($identifier == 'is_clients') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Clients
+                    </a>
+                </li>
+                <li>
+                    <a href="../page/dash_hotel.php"
+                        class="nav-link <?php echo ($identifier == 'is_hotel') ? "active" : "link-dark"; ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="<?php echo ($identifier == 'is_hotel') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        hotels
+                    </a>
+                </li>
+                <?php
+            } else if (isset($_SESSION["id_role"]) && $_SESSION["id_role"] == 3) {
+                ?>
+                    <li>
+                        <a href="../page/dash_reservation.php" class="nav-link <?php echo ($identifier == 'is_reservation') ? "active" : "link-dark";
+                        ; ?>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="<?php echo ($identifier == 'is_reservation') ? "#FFFFFF" : "#000000"; ?>"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Reservations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../page/dash_feedback.php"
+                            class="nav-link <?php echo ($identifier == 'is_feedback') ? "active" : "link-dark"; ?>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="<?php echo ($identifier == 'is_feedback') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                <circle cx="5" cy="19" r="1"></circle>
+                            </svg>
+                            Feedback
+                        </a>
+                    </li>
+                <?php
+            } else {
+                header("location: ../page/index.php");
+            }
+            ?>
             <li>
-                <a href="../page/dash_reservation.php" class="nav-link <?php echo ($identifier=='is_reservation') ? "active" : "link-dark";; ?>">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#speedometer2"></use>
+                <a href="../page/dash_feedback.php"
+                    class="nav-link <?php echo ($identifier == 'is_profile') ? "active" : "link-dark"; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="<?php echo ($identifier == 'is_profile') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                     </svg>
-                    Reservations
+                    Profile
                 </a>
             </li>
             <li>
-                <a href="../page/dash_feedback.php" class="nav-link <?php echo ($identifier=='is_feedback') ? "active" : "link-dark"; ?>">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#table"></use>
+                <a href="../page/dash_feedback.php"
+                    class="nav-link <?php echo ($identifier == 'is_settings') ? "active" : "link-dark"; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="<?php echo ($identifier == 'is_settings') ? "#FFFFFF" : "#000000"; ?>" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
                     </svg>
-                    Feedback
+                    Settings
                 </a>
             </li>
         </ul>

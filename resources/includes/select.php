@@ -1,6 +1,6 @@
 <?php
 
-include(__DIR__ . "/../../config/db_connection.php");
+include(__DIR__ . "/../config/db_connection.php");
 
 if ($identifier == 'is_reservation') {
     $sql = 'SELECT utilisateur.id_utilisateur, utilisateur.username, reservation.id_reservation, room.id_room, reservation.date_debut, reservation.date_fin, hotel.name_hotel
